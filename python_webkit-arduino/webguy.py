@@ -2,7 +2,6 @@ import time
 import Queue
 import thread
 import urllib
-
 import gtk
 import gobject
 import webkit
