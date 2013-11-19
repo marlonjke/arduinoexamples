@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Comunica&ccedil;&atilde;o python/arduino</title>
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		function EnviaComando()	{
+			var argumento = $('#status').val();
+			location.href='callback://enviacomando:'+argumento;
+		}
+	</script>
+</head>
+<body>
+<div id="conteudo">
+<!--
+    Muita coisa à ser implementada ainda...
+    0 = on
+    1 = off
+    2 = itermitente
+    3 = sair	
+-->
+	
+Selecione um valor para &agrave; ser enviado ao arduino:
+<BR>
+<select name="situacao" id="status" style="width: 150px"> 
+<option value= 1 >Ligar</option> 
+<option value= 2 >Desligar</option> 
+<option value= 3 > Intermitente</option> 
+</select> 
+<input type="button" value="Envia" onClick="EnviaComando();">
+</div>
+</body>
+</html>
