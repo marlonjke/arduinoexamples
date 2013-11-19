@@ -1,3 +1,9 @@
+/* TODOS:
+  1 - Modificar os nomes dos valores recebidos para algo mais sugestivos...
+  2 - Adicionar função de potenciômetro para 'meia luz'...
+  3 - Have a lot of fun...
+*/
+
 int led =  13;
 char valor_recebido = '0';
 int x = 20;
