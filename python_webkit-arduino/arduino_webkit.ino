@@ -4,15 +4,16 @@
   3 - Have a lot of fun...
 */
 
-int led =  13;
-char valor_recebido = '0';
-int x = 20;
+int led =  13; // led será conectado no pino 13.
+char valor_recebido = '0'; // valor recebido via serial.
+int x = 20; // tempo para delay.
 
 void setup(){
   Serial.begin(9600);
   pinMode(led, OUTPUT);
 }
 
+// loop principal, caso tenha recebido o valor 3, itermitente...
 void loop(){
   if(valor_recebido == '3'){
     digitalWrite(led, HIGH);
@@ -28,28 +29,12 @@ void serialEvent (){
   switch(valor_recebido){
   case '1':
     digitalWrite(led, HIGH);
-    Serial.println("Led no pino 13 ligado!");
     break;
   case '2':
     digitalWrite(led, LOW);
     Serial.println("Led no pino 13 desligado!");
     break;
-  case '3':
-    Serial.println("Led no pino 13 itermitente!");
+  default:
     break;
-  case '4':
-    x += 20;
-    Serial.println("Menos Velocidade");
-    valor_recebido = '3';
-    break;
-  case '5':
-    if(x - 20 >= 0){
-      x -= 20;
-    }
-    Serial.println("Mais velocidade");
-    valor_recebido = '3';
-    break;
-   default:
-     break;
   }
 }
